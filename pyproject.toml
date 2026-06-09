@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "secrets-scanner"
+version = "0.1.0"
+description = "CLI tool that scans a codebase for exposed API keys and credentials"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.1",
+    "rich>=13.0",
+]
+
+[project.scripts]
+secrets-scanner = "secrets_scanner.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["secrets_scanner*"]
